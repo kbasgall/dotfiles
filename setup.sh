@@ -1,4 +1,4 @@
-# ~/.bashrc - Custom setup for Codespace
+#!/bin/bash
 
 # Define an array of commands to add to history
 commands_to_add=(
@@ -15,11 +15,19 @@ done
 
 # Ensure history is updated immediately
 shopt -s histappend     # Append to history, don't overwrite
-PROMPT_COMMAND='history -a; history -n'  # Append and read history immediately
+PROMPT_COMMAND="history -a; history -n"  # Append and read history immediately
 
-# Example: Add custom aliases if needed
-alias dl='dc logs -f --tail=100 ssr web'
-alias ga='m dev_create_facilities_fixture_data'
+# Add custom aliases
+aliases_to_add=(
+    "alias dl=\"dc logs -f --tail=100 ssr web\""
+    "alias ga=\"m dev_create_facilities_fixture_data\""
+)
+
+for cmd in "${aliases_to_add[@]}"; do
+    echo "$cmd" >> ~/.bashrc
+done
+
+source ~/.bashrc
 
 echo "starting containers"
 dc up -d &
