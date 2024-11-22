@@ -30,4 +30,5 @@ for cmd in "${aliases_to_add[@]}"; do
 done
 
 source ~/.bashrc
+chmod +x /workspaces/.codespaces/.persistedshare/dotfiles/start.sh
 /workspaces/.codespaces/.persistedshare/dotfiles/start.sh
