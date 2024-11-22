@@ -19,8 +19,10 @@ PROMPT_COMMAND="history -a; history -n"  # Append and read history immediately
 
 # Add custom aliases
 aliases_to_add=(
+    "\n\n# kbasgall things"
     "alias dl=\"dc logs -f --tail=100 ssr web\""
-    "alias ga=\"m dev_create_facilities_fixture_data\""
+    "alias fd=\"m dev_create_facilities_fixture_data\""
+    "alias start="/workspaces/.codespaces/.persistedshare/dotfiles/start.sh""
 )
 
 for cmd in "${aliases_to_add[@]}"; do
@@ -28,10 +30,4 @@ for cmd in "${aliases_to_add[@]}"; do
 done
 
 source ~/.bashrc
-
-echo "starting containers"
-dc up -d &
-echo "sleepy"
-sleep 180 &
-echo "creating facilities"
-m dev_create_facilities_fixture_data &
+/workspaces/.codespaces/.persistedshare/dotfiles/start.sh
