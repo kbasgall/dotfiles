@@ -6,6 +6,7 @@ commands_to_add=(
     "m dev_create_facilities_fixture_data"
     "docker system prune -a"
     "dc up -d"
+    "m makemigrations"
 )
 
 # Add each command in the array to the history
@@ -20,9 +21,10 @@ PROMPT_COMMAND="history -a; history -n"  # Append and read history immediately
 # Add custom aliases
 aliases_to_add=(
     "\n\n# kbasgall things"
-    "alias dl=\"dc logs -f --tail=100 ssr web\""
-    "alias fd=\"m dev_create_facilities_fixture_data\""
+    "alias dlog=\"dc logs -f --tail=100 ssr web\""
+    "alias fdata=\"m dev_create_facilities_fixture_data\""
     "alias start="/workspaces/.codespaces/.persistedshare/dotfiles/start.sh""
+    "alias prune="docker system prune -f && docker image prune -a""
 )
 
 for cmd in "${aliases_to_add[@]}"; do
