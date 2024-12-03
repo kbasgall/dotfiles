@@ -7,6 +7,8 @@ commands_to_add=(
     "docker system prune -a"
     "dc up -d"
     "m makemigrations"
+    "git pull origin master --rebase --autostash"
+    "cd /workspaces/web/src/frontend/rsdk && m generate_api_schemas && yarn run build:apiClient cd /workspaces/web"
 )
 
 # Add each command in the array to the history
@@ -28,9 +30,9 @@ aliases_to_add=(
 )
 
 for cmd in "${aliases_to_add[@]}"; do
-    echo "$cmd" >> ~/.bashrc
+    echo "$cmd" >> ~/.bash_aliases
 done
 
-source ~/.bashrc
+source ~/.bash_aliases
 chmod +x /workspaces/.codespaces/.persistedshare/dotfiles/start.sh
 /workspaces/.codespaces/.persistedshare/dotfiles/start.sh
