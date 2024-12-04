@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create aliases
+source /workspaces/.codespaces/.persistedshare/dotfiles/.kristenrc
+
 # Define an array of commands to add to history
 commands_to_add=(
     "dc logs -f --tail=100 ssr"
@@ -20,19 +23,5 @@ done
 shopt -s histappend     # Append to history, don't overwrite
 PROMPT_COMMAND="history -a; history -n"  # Append and read history immediately
 
-# Add custom aliases
-aliases_to_add=(
-    "\n\n# kbasgall things"
-    "alias dlog=\"dc logs -f --tail=100 ssr web\""
-    "alias fdata=\"m dev_create_facilities_fixture_data\""
-    "alias start="/workspaces/.codespaces/.persistedshare/dotfiles/start.sh""
-    "alias prune="docker system prune -f && docker image prune -a""
-)
-
-for cmd in "${aliases_to_add[@]}"; do
-    echo "$cmd" >> ~/.bash_aliases
-done
-
-source ~/.bash_aliases
 chmod +x /workspaces/.codespaces/.persistedshare/dotfiles/start.sh
 /workspaces/.codespaces/.persistedshare/dotfiles/start.sh
