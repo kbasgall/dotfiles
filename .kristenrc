@@ -1,5 +1,8 @@
 alias dlog='dc logs -f --tail=100 ssr web'
 alias fdata="m dev_create_facilities_fixture_data"
 alias start="/workspaces/.codespaces/.persistedshare/dotfiles/start.sh"
-alias prune="docker system prune -f && docker image prune -a"
+alias prune="docker system prune -f && docker image prune -a -f"
 alias atest="echo \"\n:)\n\""
+alias metro="cd /workspaces/web/src/frontend/reactNativeApp && yarn start"
+alias gcm="git checkout origin/master"
+alias gpm="git pull origin master --autostash --rebase"
