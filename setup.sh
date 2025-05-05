@@ -15,6 +15,9 @@ commands_to_add=(
     "source /workspaces/.codespaces/.persistedshare/dotfiles/.kristenrc"
 )
 
+# We will have two lines for the process count but it works
+echo "processes = 4" >> "/workspaces/web/config/wsgi/development.ini"
+
 # Add each command in the array to the history
 for cmd in "${commands_to_add[@]}"; do
     echo "$cmd" >> ~/.bash_history
