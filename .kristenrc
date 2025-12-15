@@ -7,5 +7,5 @@ alias metro="cd /workspaces/web/src/frontend/reactNativeApp && yarn start"
 alias gcm="git checkout origin/master"
 alias gpm="git pull origin master --autostash --rebase"
 alias views="cd /workspaces/web/src/frontend/rsdk && m generate_api_schemas && yarn run build:apiClient"
-alias model="m makemigrations && m migrate"
+alias model='m makemigrations && m migrate && echo -e "\n\n\n\033[1;33m⚠️  REMINDER: Update your migration file with:\033[0m\n  \033[1;37msqlmigrate_verified = True\033[0m\n  \033[1;37mmodel_change_ticket_url = \"https://roverdotcom.atlassian.net/browse/DEV_TICKET\"\033[0m\n\n  \033[1;37mRun m check_migration_safety grooming 0004_groomingtestimonialrequest\033[0m\n"'
 alias gingr_mock="m makemigrations && m migrate --database gingr_mock"
