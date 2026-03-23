@@ -11,7 +11,7 @@ commands_to_add=(
     "dc up -d"
     "m makemigrations"
     "git pull origin master --rebase --autostash"
-    "cd /workspaces/web/src/frontend/rsdk && m generate_api_schemas && yarn run build:apiClient cd /workspaces/web"
+    "cd /workspaces/web/src/frontend/rsdk && m generate_api_schemas && pnpm run build:apiClient cd /workspaces/web"
     "source /workspaces/.codespaces/.persistedshare/dotfiles/.kristenrc"
 )
 
