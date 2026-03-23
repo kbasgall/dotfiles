@@ -16,7 +16,7 @@ commands_to_add=(
 )
 
 # We will have two lines for the process count but it works
-echo "processes = 4" >> "/workspaces/web/config/wsgi/development.ini"
+# echo "processes = 4" >> "/workspaces/web/config/wsgi/development.ini"
 
 # Add each command in the array to the history
 for cmd in "${commands_to_add[@]}"; do
