@@ -13,6 +13,7 @@ commands_to_add=(
     "git pull origin master --rebase --autostash"
     "cd /workspaces/web/src/frontend/rsdk && m generate_api_schemas && pnpm run build:apiClient cd /workspaces/web"
     "source /workspaces/.codespaces/.persistedshare/dotfiles/.kristenrc"
+    "m prod_reindex_grooming_services"
 )
 
 # We will have two lines for the process count but it works
