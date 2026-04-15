@@ -3,6 +3,10 @@
 cp .kristenrc $HOME/.kristenrc
 echo "source $HOME/.kristenrc" >> $HOME/.bashrc
 
+# Claude Code global instructions
+mkdir -p $HOME/.claude
+ln -sf /workspaces/.codespaces/.persistedshare/dotfiles/CLAUDE.md $HOME/.claude/CLAUDE.md
+
 # Define an array of commands to add to history
 commands_to_add=(
     "dc logs -f --tail=100 ssr web"
